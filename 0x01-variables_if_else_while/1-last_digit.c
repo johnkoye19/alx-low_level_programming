@@ -19,9 +19,14 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	K = n % 10;
 
 	/* your code goes here */
+	K = n % 10;
+	if (K < 0)
+	{
+		K = K * -1;
+	}
+
 	if (K > 5)
 	{
 		printf("%s %d is %d and is greater than 5\n", str, n, K);
