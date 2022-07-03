@@ -22,10 +22,6 @@ int main(void)
 
 	/* your code goes here */
 	K = n % 10;
-	if (K < 0)
-	{
-		K = K * -1;
-	}
 
 	if (K > 5)
 	{
