@@ -35,7 +35,7 @@ int main(void)
 
 	else if (K < 6)
 	{
-		printf("%s %d is %d and is less than 6 and not zero\n", str, n, K);
+		printf("%s %d is %d and is less than 6 and not 0\n", str, n, K);
 	}
 
 	return (0);
