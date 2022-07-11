@@ -2,7 +2,8 @@
 
 /**
 * mul - function to multiply two numbers: a and b
-* @a, b: argments to be multiplied
+* @a: one of the argments to be multiplied
+* @b: one of the arguments to be multiplied
 * Return: 0 (Success)
 */
 
