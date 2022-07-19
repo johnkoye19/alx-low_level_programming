@@ -24,9 +24,7 @@ char *_strchr(char *s, char c)
 			s = s + a;
 			return (s);
 		}
-		else
-		{
-			return ('\0');
-		}
 	}
+	
+	return ('\0');
 }
