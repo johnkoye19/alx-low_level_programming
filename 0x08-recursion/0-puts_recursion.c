@@ -4,7 +4,7 @@
 * @s: the string we are working with 
 * Return: returns void.
 */
-void _puts_recursion(char *s);
+void _puts_recursion(char *s)
 {
 	if (*s == '\0')
 	{
