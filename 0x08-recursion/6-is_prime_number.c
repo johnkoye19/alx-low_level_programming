@@ -2,8 +2,8 @@
 int increse_divide(int n, int i);
 
 /**
-* is_prime_number - function to returns 1 if the n is a prime num, otherwise return 0.
-* @n: the number we are checking. 
+* is_prime_number - func to return 1 if n is a prime num, otherwise return 0.
+* @n: the number we are checking.
 * Return: returns an integer.
 */
 
@@ -13,7 +13,6 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	
 	if (n == 2)
 	{
 		return (1);
@@ -36,7 +35,6 @@ int increse_divide(int n, int i)
 		}
 		return (increse_divide(n, i + 1));
 	}
-	
+
 	return (1);
 }
-		
