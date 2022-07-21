@@ -34,7 +34,7 @@ int increse_divide(int n, int i)
 		{
 			return (0);
 		}
-		return (increse_divide(n, i++));
+		return (increse_divide(n, i + 1));
 	}
 	
 	return (1);
