@@ -16,7 +16,7 @@ return (NULL);
 }
 for (i = 0; i < sizeof(*str)/sizeof(str[0]); i++)
 {
-*(ptr + i) = str(i);
+*(ptr + i) = str[i];
 }
 return (ptr);
 }
