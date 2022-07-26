@@ -4,12 +4,12 @@
 /**
 * _strdup - function that duplicates a string.
 * @str: pointer to the string to be duplicated.
-* Return: a pointer to the duplicate memory location. 
+* Return: a pointer to the duplicate memory location.
 */
 char *_strdup(char *str)
 {
 	unsigned int i;
-	char* ptr = (char*) malloc(sizeof(str));
+	char *ptr = (char *) malloc(sizeof(str));
 
 	if (str == NULL)
 	{
