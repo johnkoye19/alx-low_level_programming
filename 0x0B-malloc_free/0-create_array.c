@@ -15,7 +15,7 @@ if (size == 0);
 return (NULL);
 }
 char* ptr = (char*) malloc(sizeof(char) * size);
-for (i = 0; i <= size; i++)
+for (i = 0; i <= size-1; i++)
 {
 *(ptr + i) = c;
 }
