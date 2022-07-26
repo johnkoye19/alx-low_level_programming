@@ -18,7 +18,10 @@ if (size == 0)
 {
 return (NULL);
 }
-
+if (ptr == NULL)
+{
+	return (NULL);
+}
 for (i = 0; i <= size - 1; i++)
 {
 *(ptr + i) = c;
