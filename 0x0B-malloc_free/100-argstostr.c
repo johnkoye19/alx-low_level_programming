@@ -16,10 +16,11 @@ char *argstostr(int ac, char **av)
 	int i;
 	int j;
 	int n = 1;
+	int length;
 	
 	for (i = 0; i < ac; i++)
 	{
-		length += _strlen(av[i]);
+		length += strlen(av[i]);
 	}
 	/* allocate space for the new string */
 	str = malloc(sizeof(char) * (length + ac + 1));
