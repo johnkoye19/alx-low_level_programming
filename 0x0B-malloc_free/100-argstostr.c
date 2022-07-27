@@ -14,8 +14,8 @@ char *argstostr(int ac, char **av)
 {
 	char *ptr;
 	int i;
-	int j;
-	int n = 1;
+	/*int j;*/
+	/*int n = 1;*/
 	int length;
 	
 	for (i = 0; i < ac; i++)
@@ -23,6 +23,6 @@ char *argstostr(int ac, char **av)
 		length += strlen(av[i]);
 	}
 	/* allocate space for the new string */
-	str = malloc(sizeof(char) * (length + ac + 1));
+	ptr = malloc(sizeof(char) * (length + ac + 1));
 	return (ptr);
 }
