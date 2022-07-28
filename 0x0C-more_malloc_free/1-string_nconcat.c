@@ -12,8 +12,8 @@
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int a, b, i, q;
-	int j = 0;
+	unsigned int a, b, i, q;
+	unsigned int j = 0;
 	char *ptr;
 	
 	a = (s1 == NULL) ? 0 : strlen(s1);
