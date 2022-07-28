@@ -1,5 +1,5 @@
 #include <stdio.h>
-#includs <stdlib.h>
+#include <stdlib.h>
 #include "main.h"
 /**
 * malloc_checked - that allocates memory with malloc.
