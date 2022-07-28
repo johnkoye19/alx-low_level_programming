@@ -1,3 +1,15 @@
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+* string_nconcat - function that concatenates two strings.
+* @s1: the first string.
+* @s2: the second string
+* @n: the number of bytes to cop from s2
+* Return: returns a pointer to the memory location
+*/
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int a, b, i, q;
