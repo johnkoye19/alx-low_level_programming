@@ -11,7 +11,7 @@ void *malloc_checked(unsigned int b)
 	char *ptr;
 
 	ptr = malloc (b);
-	If ( ptr == NULL)
+	if ( ptr == NULL)
 	{
 		exit(98);
 	}
