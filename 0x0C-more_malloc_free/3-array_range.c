@@ -1,4 +1,13 @@
-Write a function that creates an array of integers.
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "main.h"
+/**
+* array_range - function that creates an array of integers.
+* @min: the lower range
+* @max: the higher range
+* Return: returns a poointer to the int array
+*/
 
 int *array_range(int min, int max)
 {
@@ -15,14 +24,11 @@ int *array_range(int min, int max)
 	
 	if (ptr == NULL)
 	{
-		return (ptr);
+		return (NULL);
 	}
-	for (i = min; i <= max; i++; j++)
+	for (i = min; i <= max; i++, j++)
 	{
 		ptr[j] = i;
 	}
+	return (ptr);
 }
-The array created should contain all the values from min (included) to max (included), ordered from min to max
-Return: the pointer to the newly created array
-If min > max, return NULL
-If malloc fails, return NULL
