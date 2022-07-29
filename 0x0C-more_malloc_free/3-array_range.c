@@ -12,7 +12,7 @@
 int *array_range(int min, int max)
 {
 	int j = 0;
-	int i, 
+	int i;
 	int num = 0;
 	int *ptr;
 	
