@@ -33,6 +33,7 @@ int main(int argc, int *argv[])
 				exit(98);
 			}
 		}
+	}
 	convert(*argv[1], *argv[2]);
 	return (0);
 }
