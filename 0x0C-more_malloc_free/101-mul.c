@@ -48,14 +48,14 @@ int convert(char s1[], char s2[])
 	int num2 = 0;
 	int n = strlen(s1);
 	int n2 = strlen(s2);
-	int i, rem, len = 0, n, m;
+	int i, rem, len = 0, m;
 	char str[];
 	
 	for (i = 0; i < n; i++)
 	{
 		num = num * 10 + (s1[i] - 48);
 	}
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n2; i++)
 	{
 		num2 = num2 * 10 + (s2[i] - 48);
 	}
