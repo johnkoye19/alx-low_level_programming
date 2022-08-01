@@ -6,17 +6,17 @@
 int convert(char s1[], char s2[]);
 int mult(int a, int b);
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	int i, j;
 	
 	if (argc > 3)
 	{
-		_putchar(E);
-		_putchar(r);
-		_putchar(r);
-		_putchar(o);
-		_putchar(r);
+		_putchar('E');
+		_putchar('r');
+		_putchar('r');
+		_putchar('o');
+		_putchar('r');
 		_putchar('\n');
 		exit(98);
 	}
@@ -27,11 +27,11 @@ int main(int argc, int *argv[])
 		{
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
 			{
-				_putchar(E);
-				_putchar(r);
-				_putchar(r);
-				_putchar(o);
-				_putchar(r);
+				_putchar('E');
+				_putchar('r');
+				_putchar('r');
+				_putchar('o');
+				_putchar('r');
 				_putchar('\n');
 				exit(98);
 			}
