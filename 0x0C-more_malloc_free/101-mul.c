@@ -44,7 +44,7 @@ int convert(char s1[], char s2[])
 	int num2 = 0;
 	int n = strlen(s1);
 	int n2 = strlen(s2);
-	int i, rem, len = 0, n;
+	int i, rem, len = 0, n, m;
 	char str[];
 	
 	for (int i = 0; i < n; i++)
