@@ -2,6 +2,7 @@
 #include <stdlib.h>
 /**
 * main - prints the name of this file if compiled.
+* __FILE__: inbuilt macro that stores the filename.
 * Return: returns an integer.
 */
 
