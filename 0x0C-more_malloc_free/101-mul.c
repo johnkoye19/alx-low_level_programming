@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-int convert(char s1[], char s2[])  
+int convert(char *s1[], char *s2[])  
 {
 	int num = 0;
 	int answer;
@@ -49,7 +49,7 @@ int convert(char s1[], char s2[])
 	int n = strlen(s1);
 	int n2 = strlen(s2);
 	int i, rem, len = 0, m;
-	char str[];
+	char *str[];
 	
 	for (i = 0; i < n; i++)
 	{
