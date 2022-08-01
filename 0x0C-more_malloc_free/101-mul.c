@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include "main.h"
 
+int convert(char s1[], char s2[]);
+int mult(int a, int b);
+
 int main(int argc, int *argv[])
 {
 	int i, j;
@@ -48,15 +51,15 @@ int convert(char s1[], char s2[])
 	int i, rem, len = 0, n, m;
 	char str[];
 	
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		num = num * 10 + (s1[i] - 48);
 	}
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		num2 = num2 * 10 + (s2[i] - 48);
 	}
-	answer = mult(int num, int num2);
+	answer = mult(num, num2);
 	
 	n = answer;
 	while (n != 0)
@@ -74,7 +77,7 @@ int convert(char s1[], char s2[])
 	
 	for (m = 0; m < len; m++)
 	{
-		_putchar(s[m]);
+		_putchar(str[m]);
 	}
 	_putchar('\n');
 	return(0);
