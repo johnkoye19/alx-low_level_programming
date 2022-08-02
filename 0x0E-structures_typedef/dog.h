@@ -15,7 +15,7 @@
  *
  * dog_t - Typedef for struct dog
  */
- 
+
 struct dog
 {
 	char *name;
