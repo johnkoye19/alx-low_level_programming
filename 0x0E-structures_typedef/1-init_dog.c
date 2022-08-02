@@ -1,4 +1,4 @@
-#include "main.h"
+#include "dog.h"
 /**
 * init_dog - function that initializes the var of struct dog.
 * dog *d: the pointer to the location of the initialization.
