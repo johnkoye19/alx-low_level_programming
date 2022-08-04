@@ -16,12 +16,11 @@ int (*get_op_func(char *s))(int, int)
 	    };
 	int i;
 
-	for (i = 0; i < 6; i++)
+	while (op_s[i].op)
 	{
-		if (*(ops.op[i]) == *s)
-		{
-			return (ops.(*f)[i]);
-		}
+		if (*(op_s[i].op) == *s)
+			return (op_s[i].f);
+		i++;
 	}
 	return (NULL);
 }
