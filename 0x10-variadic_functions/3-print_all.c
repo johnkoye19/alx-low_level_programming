@@ -94,7 +94,7 @@ void print_all(const char * const format, ...)
 	while(format && format[i])
 	{
 		j = 0;
-		while(j < 4 && (format[i] != pall[j].symbols))
+		while(j < 4 && (format[i] != pall[j].symbol))
 		{
 			j++;
 		}
@@ -102,8 +102,8 @@ void print_all(const char * const format, ...)
 		if (j < 4)
 		{
 			printf("%s", separator);
-			pall[j].print(args);
-			*separator = ",";
+			pall[j].print(all);
+			separator = ",";
 		}
 		i++;
 	
