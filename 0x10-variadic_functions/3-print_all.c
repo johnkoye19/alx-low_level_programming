@@ -11,7 +11,7 @@ void print_all(const char * const format, ...);
 
 /**
  * print_char - Prints a char.
- * @arg: A list of arguments pointing to
+ * @all: A list of arguments pointing to
  * the character to be printed.
  */
 void print_char(va_list all)
@@ -24,7 +24,7 @@ void print_char(va_list all)
 
 /**
  * print_int - Prints an int.
- * @arg: A list of arguments pointing to
+ * @all: A list of arguments pointing to
  * the integer to be printed.
  */
 void print_int(va_list all)
@@ -37,7 +37,7 @@ void print_int(va_list all)
 
 /**
  * print_float - Prints a float.
- * @arg: A list of arguments pointing to
+ * @all: A list of arguments pointing to
  * the float to be printed.
  */
 void print_float(va_list all)
@@ -50,7 +50,7 @@ void print_float(va_list all)
 
 /**
  * print_string - Prints a string.
- * @arg: A list of arguments pointing to
+ * @all: A list of arguments pointing to
  * the string to be printed.
  */
 void print_string(va_list all)
@@ -91,10 +91,10 @@ void print_all(const char * const format, ...)
 	
 	va_start(all, format);
 	
-	while(format && format[i])
+	while (format && format[i])
 	{
 		j = 0;
-		while(j < 4 && (format[i] != *(pall[j].symbol)))
+		while (j < 4 && (format[i] != *(pall[j].symbol)))
 		{
 			j++;
 		}
