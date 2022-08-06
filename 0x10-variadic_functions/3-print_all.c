@@ -78,7 +78,7 @@ void print_string(va_list all)
  */
 void print_all(const char * const format, ...)
 {
-	int j; 
+	int j;
 	int i = 0;
 	char *separator = "";
 	va_list all;
@@ -87,10 +87,11 @@ void print_all(const char * const format, ...)
 		{"i", print_int},
 		{"f", print_float},
 		{"s", print_string}
+
 	};
-	
+
 	va_start(all, format);
-	
+
 	while (format && format[i])
 	{
 		j = 0;
@@ -98,15 +99,15 @@ void print_all(const char * const format, ...)
 		{
 			j++;
 		}
-		
+
 		if (j < 4)
 		{
 			printf("%s", separator);
 			pall[j].print(all);
 			separator = ", ";
 		}
+
 		i++;
-	
 	}
 	printf("\n");
 	va_end(all);
