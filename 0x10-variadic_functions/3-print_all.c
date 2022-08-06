@@ -1,27 +1,113 @@
+#include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
+
+void print_char(va_list all);
+void print_int(va_list all);
+void print_float(va_list all);
+void print_string(va_list all);
+void print_all(const char * const format, ...);
+
+
+/**
+ * print_char - Prints a char.
+ * @arg: A list of arguments pointing to
+ * the character to be printed.
+ */
+void print_char(va_list all)
+{
+	char letter;
+
+	letter = va_arg(all, int);
+	printf("%c", letter);
+}
+
+/**
+ * print_int - Prints an int.
+ * @arg: A list of arguments pointing to
+ * the integer to be printed.
+ */
+void print_int(va_list all)
+{
+	int num;
+
+	num = va_arg(all, int);
+	printf("%d", num);
+}
+
+/**
+ * print_float - Prints a float.
+ * @arg: A list of arguments pointing to
+ * the float to be printed.
+ */
+void print_float(va_list all)
+{
+	float num;
+
+	num = va_arg(all, double);
+	printf("%f", num);
+}
+
+/**
+ * print_string - Prints a string.
+ * @arg: A list of arguments pointing to
+ * the string to be printed.
+ */
+void print_string(va_list all)
+{
+	char *str;
+
+	str = va_arg(all, char *);
+
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+
+	printf("%s", str);
+}
+/**
+ * print_all - Prints anything, followed by a new line.
+ * @format: A string of characters representing the argument types.
+ * @...: A variable number of arguments to be printed.
+ *
+ * Description: Any argument not of type char, int, float,
+ * or char * is ignored.
+ * If a string argument is NULL, (nil) is printed instead.
+ */
 void print_all(const char * const format, ...)
 {
+	int j; 
+	int i = 0;
+	char *separator = "";
 	va_list all;
+	printer_t pall[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
+	};
+	
 	va_start(all, format);
-	while(format[i])
+	
+	while(format && format[i])
 	{
-		va_arg(
+		j = 0;
+		while(j < 4 && (format[i] != pall[j].symbols))
+		{
+			j++;
+		}
+		
+		if (j < 4)
+		{
+			printf("%s", separator);
+			pall[j].print(args);
+			*separator = ",";
+		}
+		i++;
+	
 	}
+	printf("\n");
 	va_end(all);
-Write a function that prints anything.
-
-Prototype: void print_all(const char * const format, ...);
-where format is a list of types of arguments passed to the function
-c: char
-i: integer
-f: float
-s: char * (if the string is NULL, print (nil) instead
-any other char should be ignored
-see example
-You are not allowed to use for, goto, ternary operator, else, do ... while
-You can use a maximum of
-2 while loops
-2 if
-You can declare a maximum of 9 variables
-You are allowed to use printf
-Print a new line at the end of your function
 }
