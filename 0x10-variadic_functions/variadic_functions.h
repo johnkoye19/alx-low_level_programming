@@ -1,5 +1,6 @@
 #ifndef VARIADIC_FUNCTION_H
 #define VARIADIC_FUNCTION_H
+#include <stdarg.h>
 /**
  * struct printer - A new struct type defining a printer.
  * @symbol: A symbol representing a data type.
