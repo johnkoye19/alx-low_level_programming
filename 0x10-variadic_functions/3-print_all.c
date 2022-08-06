@@ -103,7 +103,7 @@ void print_all(const char * const format, ...)
 		{
 			printf("%s", separator);
 			pall[j].print(all);
-			separator = ",";
+			separator = ", ";
 		}
 		i++;
 	
