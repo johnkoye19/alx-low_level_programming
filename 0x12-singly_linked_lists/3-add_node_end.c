@@ -12,10 +12,10 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *move, *endnode;
-	
+
 	move = (*head);
 	endnode = malloc(sizeof(list_t));
-	
+
 	if (endnode == NULL)
 		return (NULL);
 	endnode->str = strdup(str);
@@ -31,7 +31,6 @@ list_t *add_node_end(list_t **head, const char *str)
 		move = move->next;
 	}
 	move->next = endnode;
-	
-	
+
 	return (endnode);
 }
