@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lists.h"
-//Write a function that adds a new node at the end of a list_t list.
+/*Write a function that adds a new node at the end of a list_t list.*/
 
 list_t *add_node_end(list_t **head, const char *str)
 {
