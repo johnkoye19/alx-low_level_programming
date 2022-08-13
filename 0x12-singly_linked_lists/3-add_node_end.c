@@ -16,11 +16,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	move = (*head);
 	endnode = malloc(sizeof(list_t));
 	
+	if (endnode == NULL)
+		return (NULL);
 	endnode->str = strdup(str);
 	endnode->len = strlen(str);
 	endnode->next = NULL;
-	if (endnode == NULL)
-		return (NULL);
 	if (move == NULL)
 		return(endnode);
 	while (move->next)
