@@ -12,5 +12,10 @@ if ((*head) == NULL)
 (*head) = end;
 return (end);
 }
+while (end)
+{
+move->next = end;
+}
+return (end);
 } 
 Return: the address of the new element, or NULL if it failed
