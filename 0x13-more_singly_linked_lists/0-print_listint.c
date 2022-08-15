@@ -9,9 +9,11 @@
 */
 size_t print_listint(const listint_t *h)
 {
-	listint_t *move;
+	const listint_t *move;
+	int a = 0;
+
 	move = h;
-	size_t a = 0;
+
 	while (move != NULL)
 	{
 		printf("%d\n", move->n);
