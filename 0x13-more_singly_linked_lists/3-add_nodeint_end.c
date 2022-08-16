@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lists.h"
 /**
-  * add_nodeint_end - function that adds a new node at the end of a listint_t list.
+  * add_nodeint_end - function that adds a new node at the end of a list.
   * @head: pointer to pointer to node one
   * @n: the int to be included
   * Return:: return a pointer.
@@ -18,7 +18,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	end->n = n;
 	end->next = NULL;
 	if (end == NULL)
-		return(NULL);
+		return (NULL);
 	if ((*head) == NULL)
 	{
 		(*head) = end;
