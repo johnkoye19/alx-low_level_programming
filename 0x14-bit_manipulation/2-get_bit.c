@@ -2,7 +2,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int bin = 0;
 	unsigned long int rem, i = 1;
-	int a;
+	unsigned int a;
 	int *p;
 	
 	while (n!=0)
