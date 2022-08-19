@@ -1,11 +1,25 @@
-Write a function that returns the value of a bit at a given index.
-
 int get_bit(unsigned long int n, unsigned int index)
 {
-while (n >= 0)
-{
-n = n / 2;
+	unsigned long int bin = 0;
+	unsigned long int rem, i = 1;
+	int a;
+	int *p;
+	
+	while (n!=0)
+	{
+		rem = n % 2;
+		n /= 2;
+		bin += rem * i;
+		i *= 10;
+	}
+	while (bin != 0)
+	{
+		*(p + a) = bin % 10;
+		bin = bin / 10;
+		a++;
+	}
+	if (index < a)
+		return (*(p + index));
+	else
+		return (-1);
 }
-}
-where index is the index, starting from 0 of the bit you want to get
-Returns: the value of the bit at index index or -1 if an error occured
