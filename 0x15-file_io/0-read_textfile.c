@@ -1,44 +1,46 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "main.h"
+
 /**
- * read_textfile - reads a number of characters and prints
- * @filename: the name of the file we are reading
- * @letters: thenum of char to read
- * Return: returns the num of char the program prints
- * */
+ * read_textfile - a function that a text file and prints it
+ * @filename: name of file to be read
+ * @letters: number of letters to read and print
+ *
+ * Return: the number of letters printed, or 0 if it failed
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t charnum, wnum;
 	int fd;
-	char *buffer;
+	char *buf;
+	int t;
+	int r;
 
-	buffer = malloc(sizeof(char) * letters);
-	fd = open("filename", O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-	if (!buffer)
+	buf = malloc(sizeof(char) * letters);
+	if (!buf)
 		return (0);
-	charnum = read(fd, buffer, letters);
-	if (charnum < 0)
+	r = read(fd, buf, letters);
+	if (r < 0)
 	{
-		free(buffer);
+		free(buf);
 		return (0);
 	}
-	buffer[letters + 1] = '\0';
-	wnum = write(STDOUT_FILENO, buffer, charnum);
+	buf[r] = '\0';
+
 	close(fd);
+
+
 	if (filename == NULL)
 		return (0);
-	if (wnum < 0)
+	t = write(STDOUT_FILENO, buf, r);
+	if (t < 0)
 	{
-		free(buffer);
+		free(buf);
 		return (0);
 	}
-	free(buffer);
-	return (charnum);
+
+	free(buf);
+	return (t);
 }
