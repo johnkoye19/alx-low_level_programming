@@ -1,47 +1,73 @@
-//Write a function that splits a string and returns an array of each word of the string.
-
-//man strtok
+// Online C compiler to run C program online
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+void split(char *buffer);
+char **sarray(char *buffer, int bufsize, char *delim);
+int main() {
+    // Write C code here
+    //printf("Hello world");
+    char buffer[] = "my life is hidden in Christ.";
+    //char *buffer = buffr;
+    printf("Hello world\n");
+    split(buffer);
+    return 0;
+}
+/* i want to tokenize a string and return a pointer to tokens*/
 
-char **split(char *buffer);
-int main()
+void split(char *buffer)
 {
-	size_t size = 1024;
-	char *buffer = malloc(sizeof(char) * size);
-	//ssize_t num_read;
-
-	if (buffer == NULL)
-		return (0);
-	printf("$ ");
-	//num_read =
-	getline(&buffer, &size, stdin);
-	split(buffer);
-	//printf("%s", buffer);
-	free(buffer);
-	return (0);
-
-	//getline(&buffer, &size, stdin);
-
-	//return (0);
+    char *delim = " \n";
+    char *token;
+    char *dup = malloc(sizeof(char) * strlen(buffer) + 1);
+    int a = 1;
+    //char *mv;
+    dup = strcpy(dup, buffer);
+    printf("%s\n", dup);
+    //tokenize buffer
+    token = strtok(buffer, delim);
+    //a = 1;
+    printf("%s %d", token, a);
+    while (token != NULL)
+    {
+        token = strtok(NULL, delim);
+        a++;
+        printf("%s %d", token, a);
+    }
+    sarray(dup, a, delim);
+    //*mv = malloc(sizeof(char) * a);
+    //if (mv == NULL)
+        //return;
+    printf("\n%d", a);
 }
 
-char **split(char *buffer)
+char **sarray(char *buffer, int bufsize, char *delim)
 {
-	/*create an array of strings*/
-	int num_tok = 1;
-	char *copybuffer;
-	char *token;
-	char delim[] = " \n";
+    char *mv[bufsize - 1];
+    char *token;
+    int i = 0;
 
-	strcpy(buffer, copybuffer);
-	strtok(buffer, delim);
-	while (token != NULL)
-	{
-		token = strtok(NULL, delim);
-		num_tok++;
-	}
-	num_tok;
-	return (&copybuffer);
+    token = strtok(buffer, delim);
+    printf("hgkjdh");
+    //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+    //mv[i] = strcpy(mv[i], token);
+    //printf("%s %d", token, a);
+    printf("\n%s\n", token);
+    //printf("%s", mv[i]);
+    while (token != NULL)
+    {
+        mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+        strcpy(mv[i], token);
+        printf("%s", mv[i]);
+        //i++;
+        token = strtok(NULL, delim);
+        i++;
+        //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+        //mv[i] = strcpy(mv[i], token);
+       // a++;
+       // printf("%s %d", token, a);
+    }
+    //mv[1+i] = NULL;
+    printf("\n%d", i);
+    return (mv);
 }
