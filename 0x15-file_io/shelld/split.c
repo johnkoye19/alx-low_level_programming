@@ -46,19 +46,20 @@ char **sarray(char *buffer, int bufsize, char *delim)
     char *mv[bufsize - 1];
     char *token;
     int i = 0;
+    char **a;
 
     token = strtok(buffer, delim);
-    printf("hgkjdh");
+    printf("hgkjdh\n");
     //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
     //mv[i] = strcpy(mv[i], token);
     //printf("%s %d", token, a);
-    printf("\n%s\n", token);
+    //printf("\n%s\n", token);
     //printf("%s", mv[i]);
     while (token != NULL)
     {
-        mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+        mv[i] = malloc((sizeof(char) * strlen(token)));
         strcpy(mv[i], token);
-        printf("%s", mv[i]);
+        printf("%s\n", mv[i]);
         //i++;
         token = strtok(NULL, delim);
         i++;
@@ -68,6 +69,7 @@ char **sarray(char *buffer, int bufsize, char *delim)
        // printf("%s %d", token, a);
     }
     //mv[1+i] = NULL;
-    printf("\n%d", i);
-    return (mv);
+    a = mv;
+    printf("%d", i);
+    return (a);
 }
