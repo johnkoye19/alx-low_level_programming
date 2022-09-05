@@ -1,3 +1,4 @@
+// Online C compiler to run C program online
 //Using everything we saw, write a first version of a super simple shell that can run commands with their full path, without any argument.
 //prompt
 //parsing
@@ -9,6 +10,7 @@
 void prompt();
 void parsing(char *buf, ssize_t bufsize);
 char **sarray(char *buffer, size_t bufsize, char *delim);
+void action(char **bufptr);
 int main ()
 {
 	prompt();
@@ -38,6 +40,7 @@ void parsing(char *buf, ssize_t bufsize)
     char *delim = " \n";
     char *token;
     char dup[bufsize - 1];
+    char **mv;
     size_t a = 1;
     //char *mv;
     strcpy(dup, buf);
@@ -52,11 +55,12 @@ void parsing(char *buf, ssize_t bufsize)
         a++;
         //printf("%s %d", token, a);
     }
-    sarray(dup, a, delim);
+    mv = sarray(dup, a, delim);
     //*mv = malloc(sizeof(char) * a);
     //if (mv == NULL)
         //return;
    // printf("%d", a);
+   action(mv);
 }
 
 char **sarray(char *buffer, size_t bufsize, char *delim)
@@ -93,4 +97,12 @@ char **sarray(char *buffer, size_t bufsize, char *delim)
 }
 
 //execurion
-void action(char **
+void action(char **bufptr)
+{
+    char *cmd = bufptr[0];
+    char **agrs = bufptr;
+    
+    execve(cmd, 
+    agrs, 
+    NULL);
+}
