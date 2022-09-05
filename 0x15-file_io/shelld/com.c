@@ -37,72 +37,72 @@ void prompt()
 //parsing
 void parsing(char *buf, ssize_t bufsize)
 {
-    char *delim = " \n";
-    char *token;
-    char dup[bufsize - 1];
-    char **mv;
-    size_t a = 1;
-    //char *mv;
-    strcpy(dup, buf);
-    //printf("%s\n", dup);
-    //tokenize buffer
-    token = strtok(buf, delim);
-    //a = 1;
-    //printf("%s %d", token, a);
-    while (token != NULL)
-    {
-        token = strtok(NULL, delim);
-        a++;
-        //printf("%s %d", token, a);
-    }
-    mv = sarray(dup, a, delim);
-    //*mv = malloc(sizeof(char) * a);
-    //if (mv == NULL)
-        //return;
-   // printf("%d", a);
-   action(mv);
+	    char *delim = " \n";
+	    char *token;
+	    char dup[bufsize - 1];
+	    char **mv;
+	    size_t a = 1;
+	    //char *mv;
+	    strcpy(dup, buf);
+	    //printf("%s\n", dup);
+	    //tokenize buffer
+	    token = strtok(buf, delim);
+	    //a = 1;
+	    //printf("%s %d", token, a);
+	    while (token != NULL)
+	    {
+		token = strtok(NULL, delim);
+		a++;
+		//printf("%s %d", token, a);
+	    }
+	    mv = sarray(dup, a, delim);
+	    //*mv = malloc(sizeof(char) * a);
+	    //if (mv == NULL)
+		//return;
+	   // printf("%d", a);
+	   action(mv);
 }
 
 char **sarray(char *buffer, size_t bufsize, char *delim)
 {
-    char *mv[bufsize - 1];
-    char *token;
-    size_t i = 0;
-    char **a;
+	    char *mv[bufsize - 1];
+	    char *token;
+	    size_t i = 0;
+	    char **a;
 
-    token = strtok(buffer, delim);
-   // printf("hgkjdh\n");
-    //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
-    //mv[i] = strcpy(mv[i], token);
-    //printf("%s %d", token, a);
-    //printf("\n%s\n", token);
-    //printf("%s", mv[i]);
-    while (token != NULL)
-    {
-        mv[i] = malloc((sizeof(char) * strlen(token)));
-        strcpy(mv[i], token);
-	printf("%s\n", mv[i]);
-        //i++;
-        token = strtok(NULL, delim);
-        i++;
-        //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
-        //mv[i] = strcpy(mv[i], token);
-       // a++;
-       // printf("%s %d", token, a);
-    }
-    //mv[1+i] = NULL;
-    a = mv;
-    //printf("%d", i);
-    return (a);
+	    token = strtok(buffer, delim);
+	   // printf("hgkjdh\n");
+	    //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+	    //mv[i] = strcpy(mv[i], token);
+	    //printf("%s %d", token, a);
+	    //printf("\n%s\n", token);
+	    //printf("%s", mv[i]);
+	    while (token != NULL)
+	    {
+		mv[i] = malloc((sizeof(char) * strlen(token)));
+		strcpy(mv[i], token);
+		printf("%s\n", mv[i]);
+		//i++;
+		token = strtok(NULL, delim);
+		i++;
+		//mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+		//mv[i] = strcpy(mv[i], token);
+	       // a++;
+	       // printf("%s %d", token, a);
+	    }
+	    //mv[1+i] = NULL;
+	    a = mv;
+	    //printf("%d", i);
+	    return (a);
 }
 
 //execurion
 void action(char **bufptr)
 {
-    char *cmd = bufptr[0];
-    char **agrs = bufptr;
-    
-    execve(cmd, 
-    agrs, 
-    NULL);
+	    char *cmd = bufptr[0];
+	    char **agrs = bufptr;
+
+	    execve(cmd, 
+	    agrs, 
+	    NULL);
 }
