@@ -8,6 +8,7 @@
 #include <string.h>
 void prompt();
 void parsing(char *buf, ssize_t bufsize);
+char **sarray(char *buffer, size_t bufsize, char *delim);
 int main ()
 {
 	prompt();
@@ -34,18 +35,62 @@ void prompt()
 //parsing
 void parsing(char *buf, ssize_t bufsize)
 {
-	char *token;
-	char bufcopy[bufsize];
-	char delim[] = " \n";
-	size_t tok_num = 0;
-
-	strcpy(bufcopy, buf);
-	//tokenize to get number.
-	token = strtok(bufcopy, delim);
-	while (token != NULL)
-	{
-		tok_num++;
-		token = strtok(NULL, delim);
-	}
-	printf("\n%d", tok_num);
+    char *delim = " \n";
+    char *token;
+    char dup[bufsize - 1];
+    size_t a = 1;
+    //char *mv;
+    strcpy(dup, buf);
+    //printf("%s\n", dup);
+    //tokenize buffer
+    token = strtok(buf, delim);
+    //a = 1;
+    //printf("%s %d", token, a);
+    while (token != NULL)
+    {
+        token = strtok(NULL, delim);
+        a++;
+        //printf("%s %d", token, a);
+    }
+    sarray(dup, a, delim);
+    //*mv = malloc(sizeof(char) * a);
+    //if (mv == NULL)
+        //return;
+   // printf("%d", a);
 }
+
+char **sarray(char *buffer, size_t bufsize, char *delim)
+{
+    char *mv[bufsize - 1];
+    char *token;
+    size_t i = 0;
+    char **a;
+
+    token = strtok(buffer, delim);
+   // printf("hgkjdh\n");
+    //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+    //mv[i] = strcpy(mv[i], token);
+    //printf("%s %d", token, a);
+    //printf("\n%s\n", token);
+    //printf("%s", mv[i]);
+    while (token != NULL)
+    {
+        mv[i] = malloc((sizeof(char) * strlen(token)));
+        strcpy(mv[i], token);
+	printf("%s\n", mv[i]);
+        //i++;
+        token = strtok(NULL, delim);
+        i++;
+        //mv[i] = malloc((sizeof(char) * strlen(token)) + 1);
+        //mv[i] = strcpy(mv[i], token);
+       // a++;
+       // printf("%s %d", token, a);
+    }
+    //mv[1+i] = NULL;
+    a = mv;
+    //printf("%d", i);
+    return (a);
+}
+
+//execurion
+void action(char **
