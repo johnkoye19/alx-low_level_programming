@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 void prompt();
-char **token(char *buffer, ssize_t num_read, char **re);
+void token(char *buffer, ssize_t num_read, char **re);
 void execute(char **mv);
 int main() {
     // Write C code here
@@ -35,14 +35,14 @@ void prompt()
     //remember my error
     num_read = getline(&buffer, &n, stdin);
     printf("what you stored\n%s", buffer);
-    mv = token(buffer, num_read, mv);
+    token(buffer, num_read, mv);
     execute(mv);
     free(buffer);
 }
 
 //tokenize/parse
 
-char **token(char *buffer, ssize_t num_read, char **re)
+void token(char *buffer, ssize_t num_read, char **re)
 {
     char bufcopy[num_read - 1], bufcopy2[num_read - 1];
     char *delim = " \n";
@@ -59,29 +59,32 @@ char **token(char *buffer, ssize_t num_read, char **re)
         a++;
         token = strtok(NULL, delim);
     }
-    re = malloc(sizeof(char *) * a);
+    re = malloc((sizeof(char *) * a) + 1);
     //remember my error
     token = strtok(bufcopy2, delim);
     /* to get array of tokens*/
     while (token)
     {
-        re[i] = token;
+        re[i] = malloc((sizeof(char) * strlen(token)) + 1);
+	strcpy(re[i], token);
         printf("\n%s", re[i]);
         i++;
         //a++;
         token = strtok(NULL, delim);
     }
-    printf("\n%d", a);
-    return (re);
+    printf("girls");
+    //printf("\n%d", a);
+    execute(re);
+    //return (re);
 }
 
 //execution
 void execute(char **mv)
 {
     char *cmd = mv[0];
-    char *argv = mv;
-    char *en = {NULL};
+   // char *argv[] = mv;
+    //char *en[];
     
-    execve(cmd, argv, en);
+    execve(cmd, mv, NULL);
     //remember errors
 }

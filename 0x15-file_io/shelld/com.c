@@ -9,7 +9,7 @@
 #include <string.h>
 void prompt();
 void parsing(char *buf, ssize_t bufsize);
-char **sarray(char *buffer, size_t bufsize, char *delim);
+void sarray(char *buffer, size_t bufsize, char *delim);
 void action(char **bufptr);
 int main ()
 {
@@ -55,15 +55,15 @@ void parsing(char *buf, ssize_t bufsize)
 		a++;
 		//printf("%s %d", token, a);
 	    }
-	    mv = sarray(dup, a, delim);
+	    sarray(dup, a, delim);
 	    //*mv = malloc(sizeof(char) * a);
 	    //if (mv == NULL)
 		//return;
 	   // printf("%d", a);
-	   action(mv);
+	   //action(mv);
 }
 
-char **sarray(char *buffer, size_t bufsize, char *delim)
+void sarray(char *buffer, size_t bufsize, char *delim)
 {
 	    char *mv[bufsize - 1];
 	    char *token;
@@ -91,9 +91,10 @@ char **sarray(char *buffer, size_t bufsize, char *delim)
 	       // printf("%s %d", token, a);
 	    }
 	    //mv[1+i] = NULL;
-	    a = mv;
+	    //a = mv;
 	    //printf("%d", i);
-	    return (a);
+	    //return (a);
+	    action(mv);
 }
 
 //execurion
